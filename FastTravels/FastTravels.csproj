@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ReleaseVersion>1</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Flurl" Version="3.0.4" />
+    <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.40" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="NodaTime" Version="3.0.9" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.4.1" />
+    <PackageReference Include="Resizetizer.NT" Version="0.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Google.Cloud.Firestore" />
+    <None Remove="FirebaseAuthentication.net" />
+    <None Remove="Plugin.CloudFirestore" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Flurl" />
+    <None Remove="Plugin.FirebaseAuth" />
+    <None Remove="Common\" />
+    <None Remove="HtmlAgilityPack" />
+    <None Remove="XamarinForms.CardView" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="Resizetizer.NT" />
+    <None Remove="NodaTime" />
+    <None Remove="Plugin.FirebasePushNotification" />
+    <None Remove="pencil.svg" />
+    <None Remove="trash.svg" />
+    <None Remove="Xamarin.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SharedImage Include="pencil.svg" BaseSize="60,60" />
+    <SharedImage Include="trash.svg" BaseSize="60,60" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "334151958552",
+    "project_id": "enc-fast-travel",
+    "storage_bucket": "enc-fast-travel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334151958552:android:698ea69e9fc9e69a4fc36d",
+        "android_client_info": {
+          "package_name": "dev.exnihilocreations.FastTravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334151958552-tmtam6kfus0l9c6kdj8h9e5o3psmq4h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw4xC2OhW6-aLhnzxCVcco8QkaS9Rq6Ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334151958552-tmtam6kfus0l9c6kdj8h9e5o3psmq4h6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "334151958552-r48btmfhu6amd8gm2nqgju2s3nsjacs5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.exnihilocreations.FastTravel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
