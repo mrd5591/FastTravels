@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="http://rotorgames.com"
+    x:Class="FastTravel.DateTimePopup">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <Frame Padding="20,20,20,20"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center">
+        <StackLayout Padding="0,10,0,0" BackgroundColor="White">
+            <Label Text="Select the days you would like to be reminded." FontSize="{OnIdiom Tablet=30, Phone=Medium}"/>
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SUN" ClassId="SUN" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.SuColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.SuColor,Mode=TwoWay}" Text="Su" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="0" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="MON" ClassId="MON" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.MColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.MColor,Mode=TwoWay}" Text="M" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="1" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="TUE" ClassId="TUE" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.TColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.TColor,Mode=TwoWay}" Text="T" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="2" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="WED" ClassId="WED" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.WColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.WColor,Mode=TwoWay}" Text="W" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="3" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="THU" ClassId="THU" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.RColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.RColor,Mode=TwoWay}" Text="R" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="4" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="FRI" ClassId="FRI" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.FColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.FColor,Mode=TwoWay}" Text="F" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="5" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+                <Button x:Name="SAT" ClassId="SAT" CornerRadius="5" BorderWidth="2" BorderColor="{Binding DateTimePopupModel.SaColor,Mode=TwoWay}" BackgroundColor="{Binding DateTimePopupModel.SaColor,Mode=TwoWay}" Text="Sa" FontFamily="AmericanTypewriter-Bold" TextColor="White" Grid.Column="6" Clicked="Day_Clicked" HorizontalOptions="Fill" FontSize="{OnIdiom Tablet=50, Phone=25}"/>
+            </Grid>
+            <Label Text="Select a time below to be reminded at." FontSize="{OnIdiom Tablet=30, Phone=Medium}"/>
+            <TimePicker x:Name="_timePicker"
+                        Time="{Binding DateTimePopupModel.Time}"
+                        Format="T"
+                        FontSize="{OnIdiom Tablet=40, Phone=15}"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Cancel" Text="Cancel" Clicked="Cancel_Clicked" HorizontalOptions="EndAndExpand" Margin="0,0,10,0" FontSize="{OnIdiom Tablet=30, Phone=Medium}"/>
+                <Button x:Name="Save" Text="Save" Clicked="Save_Clicked" HorizontalOptions="End" FontSize="{OnIdiom Tablet=30, Phone=Medium}"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

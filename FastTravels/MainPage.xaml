@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FastTravel.MainPage"
+             BackgroundColor="White">
+
+    <AbsoluteLayout BackgroundColor="White" >
+        <StackLayout AbsoluteLayout.LayoutFlags="All"  
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label Text="Journeys"
+               FontSize="60"
+               FontFamily="Avenir-BlackOblique"
+               TextColor="White"
+               FontAttributes="Bold" BackgroundColor="#000d60"/>
+            <ListView x:Name="Journeys" ItemsSource="{Binding MainPageModel.Journeys}" Margin="0,10,0,0" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None" BackgroundColor="Transparent" RefreshControlColor="Red">
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                      <ViewCell>
+                        <Frame BorderColor="Black" Margin="10" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" WidthRequest="{OnIdiom Tablet=750, Phone=500}">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontFamily="Avenir-BlackOblique" FontSize="{OnIdiom Tablet=30, Phone=Header}" TextColor="White" BackgroundColor="#000d60" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" LineBreakMode="TailTruncation"/>
+                                <Label Text="{Binding Origin}" FontFamily="Avenir-BlackOblique" FontSize="{OnIdiom Tablet=25, Phone=15}" LineBreakMode="TailTruncation"/>
+                                <Label Text="{Binding Destination}" FontFamily="Avenir-BlackOblique" FontSize="{OnIdiom Tablet=25, Phone=15}" LineBreakMode="TailTruncation"/>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                                    <Label Text="Active" TextColor="DimGray" VerticalTextAlignment="Center"/>
+                                    <CheckBox IsChecked="{Binding IsActive}" HorizontalOptions="StartAndExpand" Color="{Binding CheckboxColor}" Scale="{OnIdiom Tablet=1.3, Phone=1}"/>
+                                    <ImageButton x:Name="Edit_{Binding Name}" Source="pencil.png" Clicked="Edit_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" Margin="5,0" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>
+                                    <ImageButton x:Name="Delete_{Binding Name}" Source="trash.png" Clicked="Delete_Clicked" CommandParameter="{Binding .}" BackgroundColor="Transparent" Margin="5,0" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                      </ViewCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <ImageButton Source="add.png" 
+            BackgroundColor="Transparent"
+            AbsoluteLayout.LayoutFlags="PositionProportional"  
+            AbsoluteLayout.LayoutBounds=".95,.95,80,80" 
+            Clicked="Add_Clicked" />
+    </AbsoluteLayout>
+
+</ContentPage>
