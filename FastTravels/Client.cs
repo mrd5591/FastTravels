@@ -3,15 +3,15 @@ using System.Net.Http;
 using System;
 using Newtonsoft.Json;
 using System.Text;
-using FastTravel.Models;
+using FastTravels.Models;
 using Flurl;
 using Plugin.FirebaseAuth;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Plugin.CloudFirestore;
-using FastTravel.Common;
+using FastTravels.Common;
 
-namespace FastTravel
+namespace FastTravels
 {
     public class Client
     {
@@ -51,7 +51,6 @@ namespace FastTravel
         {
             var user = await CrossFirebaseAuth.Current.Instance.SignInAnonymouslyAsync();
             FirebaseID = user.User.Uid;
-            SetHttpAuthToken(await user.User.GetIdTokenAsync(false));
             FirebaseFunctions.UpdateCreated();
             FirebaseFunctions.UpdateTime();
         }

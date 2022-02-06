@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace FastTravel.iOS
+namespace FastTravels.iOS
 {
     public class Application
     {

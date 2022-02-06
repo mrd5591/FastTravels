@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using FastTravel.Models;
+using FastTravels.Models;
 using Plugin.CloudFirestore;
 using System.Threading.Tasks;
 using NodaTime;
 using Plugin.FirebasePushNotification;
 using Plugin.FirebaseAuth;
 
-namespace FastTravel.Common
+namespace FastTravels.Common
 {
     public sealed class FirebaseFunctions
     {
         public static async void UpdateTime()
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).SetAsync(new { LAST_ACCESS = FieldValue.ServerTimestamp }, true);
         }
 
         public static async void UpdateCreated()
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("private").Document("_data").SetAsync(new { CREATED = FieldValue.ServerTimestamp }, true);
         }
 
@@ -39,6 +45,9 @@ namespace FastTravel.Common
 
         public static async void SetUnknownRoutes(List<UnknownRoute> unknownRoutes)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             var query = await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("journeys").GetAsync();
 
             var docs = query.ToObjects<FirebaseJourneyModel>();
@@ -74,6 +83,9 @@ namespace FastTravel.Common
 
         public static async Task<List<Journey>> GetJourneys()
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return new List<Journey>();
+
             var doc = await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("journeys").GetAsync();
 
             var userModels = doc.ToObjects<FirebaseJourneyModel>();
@@ -94,6 +106,9 @@ namespace FastTravel.Common
 
         public static async Task<List<UnknownRoute>> GetUnknownRoutes()
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return new List<UnknownRoute>();
+
             var query = await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("journeys").GetAsync();
 
             var docs = query.ToObjects<FirebaseJourneyModel>();
@@ -116,6 +131,9 @@ namespace FastTravel.Common
 
         public static async void UpdateJourneyDateTime(Journey journey)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             DateTimeZone tz = DateTimeZoneProviders.Tzdb.GetSystemDefault();
             string timezone = tz.ToString();
 
@@ -125,11 +143,17 @@ namespace FastTravel.Common
 
         public static async void UpdateJourneyIsActive(Journey journey)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             await CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("journeys").Document(journey.Id).UpdateAsync(new { IsActive = journey.IsActive });
         }
 
         public static async void DeleteJourney(Journey deletedJourney)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             var privRef = CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("private").Document("_data").Collection("deletedJourneys").Document(deletedJourney.Id);
             var userRef = CrossCloudFirestore.Current.Instance.Collection("users").Document(Client.FirebaseID).Collection("journeys").Document(deletedJourney.Id);
             await CrossCloudFirestore.Current.Instance.Batch().Set(privRef, deletedJourney).Delete(userRef).CommitAsync();
@@ -137,11 +161,17 @@ namespace FastTravel.Common
 
         public static async void UpdateFCMToken(string token)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             await CrossCloudFirestore.Current.Instance.Collection("users").Document(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid).SetAsync(new { FCMToken = token }, true);
         }
 
         public static async void RemoveFCMTOken(string token)
         {
+            if (string.IsNullOrEmpty(Client.FirebaseID))
+                return;
+
             await CrossCloudFirestore.Current.Instance.Collection("users").Document(CrossFirebaseAuth.Current.Instance.CurrentUser.Uid).SetAsync(new { FCMToken = "" }, true);
         }
     }

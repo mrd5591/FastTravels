@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:334151958552:android:698ea69e9fc9e69a4fc36d",
+        "mobilesdk_app_id": "1:334151958552:android:3ea2f06c4f3d7dda4fc36d",
         "android_client_info": {
-          "package_name": "dev.exnihilocreations.FastTravel"
+          "package_name": "dev.exnihilocreations.FastTravels"
         }
       },
       "oauth_client": [
@@ -20,7 +20,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAw4xC2OhW6-aLhnzxCVcco8QkaS9Rq6Ck"
+          "current_key": "AIzaSyCvVDuRHaTdALop9Cppku3Z_HNRDYOYurA"
         }
       ],
       "services": {
@@ -31,10 +31,11 @@
               "client_type": 3
             },
             {
-              "client_id": "334151958552-r48btmfhu6amd8gm2nqgju2s3nsjacs5.apps.googleusercontent.com",
+              "client_id": "334151958552-imorcsqj72d4dv623oe8qd0bui23f64n.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "dev.exnihilocreations.FastTravel"
+                "bundle_id": "dev.exnihilocreations.FastTravels",
+                "app_store_id": "1607790123"
               }
             }
           ]

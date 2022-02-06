@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using FastTravels.Common;
+﻿using FastTravels.Common;
 using FastTravels.Models;
 using Plugin.FirebaseAuth;
+using System.Threading.Tasks;
 
-namespace FastTravels.iOS
+namespace FastTravels.Droid
 {
     public class FirebaseAuthentication : IAuthenticationService
     {
@@ -15,12 +14,12 @@ namespace FastTravels.iOS
 
         public bool Logout()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public Task<AuthenticationResult.AuthToken> RefreshToken()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }

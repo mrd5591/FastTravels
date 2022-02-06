@@ -2,7 +2,7 @@
 using System.IO;
 using HtmlAgilityPack;
 
-namespace FastTravel.Common
+namespace FastTravels.Common
 {
     public class HtmlUtilities
     {

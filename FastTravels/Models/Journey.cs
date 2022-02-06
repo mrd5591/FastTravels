@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using FastTravel.Common;
+using FastTravels.Common;
 using Plugin.CloudFirestore.Attributes;
 using Xamarin.Forms;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class Journey : INotifyPropertyChanged
     {

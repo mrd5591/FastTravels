@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class MainPageModel : INotifyPropertyChanged
     {

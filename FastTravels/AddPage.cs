@@ -1,9 +1,9 @@
 ﻿using Flurl;
-using FastTravel.Models;
+using FastTravels.Models;
 using Xamarin.Forms;
 using System;
 
-namespace FastTravel
+namespace FastTravels
 {
     public partial class AddPage : ContentPage
     {

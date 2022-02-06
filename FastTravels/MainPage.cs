@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using FastTravel.Common;
-using FastTravel.Models;
+using FastTravels.Common;
+using FastTravels.Models;
 using Plugin.CloudFirestore;
 using Plugin.FirebaseAuth;
 using Plugin.FirebasePushNotification;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
-namespace FastTravel
+namespace FastTravels
 {
     public partial class MainPage : ContentPage
     {

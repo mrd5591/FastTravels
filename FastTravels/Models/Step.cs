@@ -1,6 +1,6 @@
-﻿using FastTravel.Common;
+﻿using FastTravels.Common;
 using HtmlAgilityPack;
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class Step
     {

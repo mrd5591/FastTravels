@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.FirebasePushNotification;
 
-namespace FastTravel.Droid
+namespace FastTravels.Droid
 {
     [Application]
     public class MainApplication : Application

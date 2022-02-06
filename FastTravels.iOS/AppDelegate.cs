@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FastTravel.Common;
+using FastTravels.Common;
 using Foundation;
 using Plugin.FirebasePushNotification;
 using UIKit;
 using Xamarin.Forms;
 
-namespace FastTravel.iOS
+namespace FastTravels.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 

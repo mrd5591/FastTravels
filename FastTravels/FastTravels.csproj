@@ -29,6 +29,8 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="backarrow.svg" />
+    <None Remove="help.svg" />
     <None Remove="Models\" />
     <None Remove="Google.Cloud.Firestore" />
     <None Remove="FirebaseAuthentication.net" />
@@ -52,7 +54,25 @@
     <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
+    <SharedImage Include="backarrow.svg" BaseSize="60,60" />
+    <SharedImage Include="help.svg" BaseSize="60,60" />
     <SharedImage Include="pencil.svg" BaseSize="60,60" />
     <SharedImage Include="trash.svg" BaseSize="60,60" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="HelpPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

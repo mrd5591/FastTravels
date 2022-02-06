@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class Route : INotifyPropertyChanged
     {

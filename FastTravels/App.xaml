@@ -1,8 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FastTravel.App">
+             x:Class="FastTravels.App">
     <Application.Resources>
-
+        <ControlTemplate x:Key="MainPageTemplate">
+            <Grid VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Text="Buy me coffee"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontSize="{OnIdiom Tablet=30, Phone=Header}"
+                        Clicked="Button_Clicked"
+                        FontFamily="Arial"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        TextTransform="Lowercase"
+                        HeightRequest="20"/>
+                <ContentPresenter VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    Grid.Column="0"
+                                    Grid.Row="1"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="NavPageTemplate">
+            <Grid VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ImageButton x:Name="Help" Source="help.png" Clicked="Help_Clicked" BackgroundColor="Transparent" Margin="5,0" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="End"/>
+                <ImageButton x:Name="Back" Source="backarrow.png" Clicked="Back_Clicked" BackgroundColor="Transparent" Margin="5,0" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start" VerticalOptions="End"/>
+                <ContentPresenter VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    Grid.Column="0"
+                                    Grid.Row="1"/>
+            </Grid>
+        </ControlTemplate>
     </Application.Resources>
 </Application>

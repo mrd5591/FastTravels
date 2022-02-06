@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using FastTravel.Common;
+using FastTravels.Common;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class UnknownRoute : INotifyPropertyChanged
     {

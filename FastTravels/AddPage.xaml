@@ -2,8 +2,11 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="FastTravel.AddPage"
-    BackgroundColor="White">
+    x:Class="FastTravels.AddPage"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False"
+    ControlTemplate="{StaticResource NavPageTemplate}">
+    
     <ContentPage.Content>
         <StackLayout Margin="0,10,0,10">
             <Grid>

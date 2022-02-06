@@ -1,10 +1,8 @@
-﻿
-
-using FastTravel.Common;
-using FastTravel.Models;
+﻿using FastTravels.Common;
+using FastTravels.Models;
 using Rg.Plugins.Popup.Services;
 
-namespace FastTravel
+namespace FastTravels
 {
     public partial class EditJourneyPopup : Rg.Plugins.Popup.Pages.PopupPage
     {

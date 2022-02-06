@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:animations="http://rotorgames.com"
-    x:Class="FastTravel.DateTimePopup">
+    x:Class="FastTravels.DateTimePopup">
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation 
             PositionIn="Center"

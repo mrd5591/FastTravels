@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using FastTravel.Models;
+using FastTravels.Models;
 
-namespace FastTravel
+namespace FastTravels
 {
     public class UnknownRoutePageModel : INotifyPropertyChanged
     {

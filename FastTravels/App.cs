@@ -1,11 +1,13 @@
 ﻿using System;
-using FastTravel.Common;
+using System.Linq;
+using FastTravels.Common;
 using Plugin.FirebaseAuth;
 using Plugin.FirebasePushNotification;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace FastTravel
+namespace FastTravels
 {
     public partial class App : Application
     {
@@ -54,13 +56,13 @@ namespace FastTravel
             {
                 Application.Current.Properties["isFirstTime"] = false;
                 isFirstTime = true;
+                Application.Current.SavePropertiesAsync();
             }
-
-
-            MainPage = new NavigationPage(new MainPage(isFirstTime));
 
             CrossFirebaseAuth.Current.Instance.IdToken += Instance_IdToken;
             CrossFirebasePushNotification.Current.OnTokenRefresh += Current_OnTokenRefresh;
+
+            MainPage = new NavigationPage(new MainPage(isFirstTime));
         }
 
         private async void Instance_IdToken(object sender, IdTokenEventArgs e)
@@ -78,6 +80,34 @@ namespace FastTravel
                 return;
 
             FirebaseFunctions.UpdateFCMToken(e.Token);
+        }
+
+        async void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Browser.OpenAsync("https://cash.app/$mrd5591", BrowserLaunchMode.External);
+        }
+
+        async void Help_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var actionPage = App.Current.MainPage;
+            if (actionPage.Navigation != null)
+                actionPage = actionPage.Navigation.NavigationStack.Last();
+
+            string help = "";
+            if(actionPage is AddPage)
+            {
+                help = strings.AddHelp;
+            } else if(actionPage is RoutePage)
+            {
+                help = strings.RouteHelp;
+            }
+
+            await PopupNavigation.Instance.PushAsync(new HelpPopup(help));
+        }
+
+        async void Back_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await this.MainPage.Navigation.PopAsync();
         }
 
         protected override void OnStart()

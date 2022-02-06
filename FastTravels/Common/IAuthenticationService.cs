@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using static FastTravel.Models.AuthenticationResult;
+using static FastTravels.Models.AuthenticationResult;
 
-namespace FastTravel.Common
+namespace FastTravels.Common
 {
     public interface IAuthenticationService
     {

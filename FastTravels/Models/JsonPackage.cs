@@ -1,4 +1,4 @@
-﻿namespace FastTravel.Models
+﻿namespace FastTravels.Models
 {
     public class JsonPackage
     {

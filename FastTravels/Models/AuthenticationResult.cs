@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class AuthenticationResult
     {

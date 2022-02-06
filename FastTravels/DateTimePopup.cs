@@ -1,15 +1,15 @@
 ﻿
 using System.Threading.Tasks;
-using FastTravel.Models;
+using FastTravels.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using FastTravel.Common;
+using FastTravels.Common;
 using Rg.Plugins.Popup.Services;
 
-namespace FastTravel
+namespace FastTravels
 {
     public partial class DateTimePopup : Rg.Plugins.Popup.Pages.PopupPage
     {

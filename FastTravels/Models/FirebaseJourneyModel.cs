@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Plugin.CloudFirestore.Attributes;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class FirebaseJourneyModel
     {

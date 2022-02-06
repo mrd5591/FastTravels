@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
 
-namespace FastTravel.Models
+namespace FastTravels.Models
 {
     public class DateTimePopupModel : INotifyPropertyChanged
     {
